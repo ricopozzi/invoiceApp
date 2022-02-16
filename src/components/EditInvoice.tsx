@@ -28,7 +28,7 @@ export function EditInvoice({ dueAmount, fromEmail, fromName, invoiceDate, toEma
     })
 
     const submitForm = async (data:object) => {
-         const response = await axios.put(`http://localhost:1337/api/invoices/${id}`, { data: data})
+         const response = await axios.put(`${process.env.API_URL}/${id}`, { data: data})
         
         return console.log(response)
     }

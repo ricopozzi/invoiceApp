@@ -25,7 +25,8 @@ export function Footer({...props}){
            
             >
                 <DeleteButton display="flex"/>
-                <EditButton colorScheme='green' w="6rem"
+
+                <EditButton w="6rem"
                     h="3rem" textColor="white" opacity="1" mr='0' />
                
 
