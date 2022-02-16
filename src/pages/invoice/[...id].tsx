@@ -21,7 +21,7 @@ interface EditProps {
 }
 
 export default function InvoicePage({invoice, id}: any){
-
+     //@ts-ignore
     const [ defaulty, setDefaulty ] = useState<EditProps>([])
     const router = useRouter()
     const { isOpen, onOpen, onClose } = useDisclosure()
@@ -120,7 +120,9 @@ export default function InvoicePage({invoice, id}: any){
                     fontWeight="bold"
                     >Pending</Box> }
                     
-                    <EditButton onClick={onOpen} id={id} display={{base:'none', md:'flex'}} />
+                    <EditButton 
+                    //@ts-ignore
+                    onClick={onOpen} id={id} display={{base:'none', md:'flex'}} />
                     <DeleteButton id={id} display={{base:'none', md:'flex'}} />
 
                  </Box>
@@ -238,7 +240,9 @@ export default function InvoicePage({invoice, id}: any){
            
             >
                 <DeleteButton display="flex"/>
-                <EditButton onClick={onOpen} colorScheme='green' w="6rem"
+                <EditButton 
+                //@ts-ignore
+                onClick={onOpen} colorScheme='green' w="6rem"
                     h="3rem" textColor="white" opacity="1" mr='0' />
                
 

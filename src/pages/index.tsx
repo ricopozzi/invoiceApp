@@ -38,7 +38,10 @@ export default function Home(){
      <>
       <Header />
 
-      <Drawer blockScrollOnMount={true} placement={placement} onClose={onClose} isOpen={isOpen} size="lg" >
+     
+      <Drawer blockScrollOnMount={true} 
+       //@ts-ignore
+      placement={placement} onClose={onClose} isOpen={isOpen} size="lg" >
         <DrawerOverlay />
         <DrawerContent>
           <DrawerHeader display="flex" justifyContent="flex-end" >
@@ -76,6 +79,7 @@ export default function Home(){
             <Text
             mt="2"
             textColor="gray.500"
+             //@ts-ignore
             >There are {invoices.length} total invoices</Text>
           </Box>
           
