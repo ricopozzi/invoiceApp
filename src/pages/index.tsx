@@ -16,6 +16,7 @@ interface InvoiceProps {
 }
 
 export default function Home(){
+  //@ts-ignore
   const [ invoices, setInvoices ] = useState<InvoiceProps>([])
   const { isOpen, onOpen, onClose } = useDisclosure()
   const [ placement, setPlacement ] = useState('left')
