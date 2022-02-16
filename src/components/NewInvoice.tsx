@@ -17,7 +17,7 @@ export function NewInvoice({ dueAmount, fromEmail, fromName, invoiceDate, toEmai
 
    
     const submitForm = async (data:object) => {
-        const response = await axios.post(`${process.env.API_URL}`, { data: data})
+        const response = await axios.post(`${process.env.API_URL}api/invoices`, { data: data})
 
     }
 

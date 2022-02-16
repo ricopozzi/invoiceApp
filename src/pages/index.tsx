@@ -22,7 +22,7 @@ export default function Home(){
   const [ placement, setPlacement ] = useState('left')
   
   const fetchInvoices = async () => {
-    const { data } = await axios.get(`${process.env.API_URL}`)
+    const { data } = await axios.get(`${process.env.API_URL}api/invoices`)
     setInvoices(data.data)
     console.log(invoices)
 

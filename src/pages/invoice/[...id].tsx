@@ -29,7 +29,7 @@ export default function InvoicePage({invoice, id}: any){
     const placement = 'left'
 
     const Fetchy = async () => {
-        const { data } = await axios.get(`${process.env.API_URL}/${id}`)
+        const { data } = await axios.get(`${process.env.API_URL}api/invoices/${id}`)
         
         return setDefaulty(data.data.attributes)
     }
