@@ -6,7 +6,6 @@ import { IoIosArrowBack } from 'react-icons/io'
 import { CgClose } from 'react-icons/cg'
 import { EditButton } from '../../components/EditButton'
 import { DeleteButton } from '../../components/DeleteButton'
-import { Footer } from '../../components/Footer'
 import { EditInvoice } from '../../components/EditInvoice'
 import { useEffect, useState } from 'react'
 
@@ -29,7 +28,7 @@ export default function InvoicePage({invoice, id}: any){
     const placement = 'left'
 
     const Fetchy = async () => {
-        const { data } = await axios.get(`${process.env.API_URL}api/invoices/${id}`)
+        const { data } = await axios.get(`https://invoicebacky.herokuapp.com/api/invoices/${id}`)
         
         return setDefaulty(data.data.attributes)
     }
@@ -257,7 +256,7 @@ export default function InvoicePage({invoice, id}: any){
 export async function getServerSideProps(context:any) {
     const { id } = context.query
 
-    const { data } = await axios.get(`http://localhost:1337/api/invoices/${id}`)
+    const { data } = await axios.get(`https://invoicebacky.herokuapp.com/api/invoices/${id}`)
 
     return{
         props: {invoice: data.data.attributes, id}

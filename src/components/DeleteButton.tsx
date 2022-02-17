@@ -11,7 +11,7 @@ export function DeleteButton({id ,...rest}: DeleteProps){
     const { isOpen, onOpen, onClose } = useDisclosure()
 
     const deleteInvoice = async () => {
-        const response = await axios.delete(`${process.env.API_URL}/${id}`)
+        const response = await axios.delete(`https://invoicebacky.herokuapp.com/api/invoices/${id}`)
         router.push('/')
     }
 

@@ -17,7 +17,7 @@ export function NewInvoice({ dueAmount, fromEmail, fromName, invoiceDate, toEmai
 
    
     const submitForm = async (data:object) => {
-        const response = await axios.post(`${process.env.API_URL}api/invoices`, { data: data})
+        const response = await axios.post(`https://invoicebacky.herokuapp.com/api/invoices`, { data: data})
 
     }
 

@@ -22,9 +22,8 @@ export default function Home(){
   const [ placement, setPlacement ] = useState('left')
   
   const fetchInvoices = async () => {
-    const { data } = await axios.get(`${process.env.API_URL}api/invoices`)
+    const { data } = await axios.get(`https://invoicebacky.herokuapp.com/api/invoices`)
     setInvoices(data.data)
-    console.log(invoices)
 
   }
 
