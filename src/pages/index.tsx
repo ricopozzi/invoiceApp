@@ -40,13 +40,13 @@ export default function Home(){
      
       <Drawer blockScrollOnMount={true} 
        //@ts-ignore
-      placement={placement} onClose={onClose} isOpen={isOpen} size="lg" >
+      placement={placement} onClose={onClose} isOpen={isOpen} size="lg" bg="white" >
         <DrawerOverlay />
         <DrawerContent>
-          <DrawerHeader display="flex" justifyContent="flex-end" >
+          <DrawerHeader bg="white" display="flex" justifyContent="flex-end" >
             <Button size="md" onClick={onClose} colorScheme="purple" ><CgClose /></Button>
           </DrawerHeader>
-          <DrawerBody>
+          <DrawerBody bg="white" >
             <NewInvoice />
           </DrawerBody>
         </DrawerContent>
@@ -86,9 +86,13 @@ export default function Home(){
            leftIcon={<AiOutlinePlus  />}
            borderRadius="full"
            size="lg"
-           colorScheme="purple"
+           background="purple.500"
+           textColor="white"
            fontSize="md"
            onClick={onOpen}
+           _hover={{
+             bg:'purple.600'
+           }}
           >New Invoice</Button>
           
 

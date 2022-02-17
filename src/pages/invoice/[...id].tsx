@@ -24,6 +24,7 @@ export default function InvoicePage({invoice, id}: any){
     const [ defaulty, setDefaulty ] = useState<EditProps>([])
     const router = useRouter()
     const { isOpen, onOpen, onClose } = useDisclosure()
+    const [ changeStatus, setChangeStatus ] = useState(invoice.status)
 
     const placement = 'left'
 
@@ -33,11 +34,21 @@ export default function InvoicePage({invoice, id}: any){
         return setDefaulty(data.data.attributes)
     }
 
+    const statusChange = async () => {
+        const response = await axios.put(`https://invoicebacky.herokuapp.com/api/invoices/${id}`,{
+            data: {
+                status: !invoice.status
+            }
+        })
+
+        return setChangeStatus(!changeStatus)
+    }
+
     useEffect(() => {
         
         Fetchy()
 
-    },[])
+    },[changeStatus])
 
 
     return(
@@ -93,7 +104,7 @@ export default function InvoicePage({invoice, id}: any){
                  textColor="gray.500"
                  >
                     <Text fontSize="sm" textColor="gray.400" >Status</Text>
-                    {invoice.status ?
+                    {changeStatus ?
                     <Box
                     w="6rem"
                     h="40%"
@@ -118,7 +129,15 @@ export default function InvoicePage({invoice, id}: any){
                     textColor="peru"
                     fontWeight="bold"
                     >Pending</Box> }
-                    
+
+                
+                    <Button
+                    _focus={{
+                        border:'none'
+                    }}
+                    onClick={statusChange}
+                    >Change Status</Button>
+
                     <EditButton 
                     //@ts-ignore
                     onClick={onOpen} id={id} display={{base:'none', md:'flex'}} />

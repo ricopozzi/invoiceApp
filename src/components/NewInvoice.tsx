@@ -40,6 +40,7 @@ export function NewInvoice({ dueAmount, fromEmail, fromName, invoiceDate, toEmai
                     <Heading
                     mb="4"
                     fontWeight="medium"
+                    bg="white"
                     fontSize="3xl"
                     >New Invoice</Heading>
                     <FormControl as={Form} onSubmit={handleSubmit(submitForm)} >
@@ -49,10 +50,28 @@ export function NewInvoice({ dueAmount, fromEmail, fromName, invoiceDate, toEmai
                         textColor="purple.400"
                         >Bill From</FormLabel>
                         <FormLabel mt="4" fontWeight="thin" >Name</FormLabel>
-                        <Input  type="text" {...register("fromName")} required errorBorderColor="red.300" />
+                        <Input 
+                         
+                        type="text" {...register("fromName")} 
+                        required 
+                        errorBorderColor="red.300"
+                        borderWidth={1.5} 
+                        borderColor="gray.300" 
+                        _hover={{
+                            borderWidth:1.5,
+                            borderColor:'gray.300'
+                        }}
+                        />
 
                         <FormLabel mt="4" fontWeight="thin" >Email</FormLabel>
-                        <Input type="email" {...register("fromEmail")} required errorBorderColor="red.300" />
+                        <Input type="email" {...register("fromEmail")} required errorBorderColor="red.300" 
+                        borderWidth={1.5} 
+                        borderColor="gray.300" 
+                        _hover={{
+                            borderWidth:1.5,
+                            borderColor:'gray.300'
+                        }}
+                        />
 
                         <FormLabel
                         fontWeight="semibold"
@@ -61,16 +80,44 @@ export function NewInvoice({ dueAmount, fromEmail, fromName, invoiceDate, toEmai
                         >Bill To</FormLabel>
 
                         <FormLabel mt="4" fontWeight="thin" >Name</FormLabel>
-                        <Input  type="text" {...register("toName")} required errorBorderColor="red.300" />
+                        <Input  type="text" {...register("toName")} required errorBorderColor="red.300" 
+                        borderWidth={1.5} 
+                        borderColor="gray.300" 
+                        _hover={{
+                            borderWidth:1.5,
+                            borderColor:'gray.300'
+                        }}
+                        />
 
                         <FormLabel mt="4" fontWeight="thin" >Email</FormLabel>
-                        <Input type="email" {...register("toEmail")} required errorBorderColor="red.300"/>
+                        <Input type="email" {...register("toEmail")} required errorBorderColor="red.300"
+                        borderWidth={1.5} 
+                        borderColor="gray.300" 
+                        _hover={{
+                            borderWidth:1.5,
+                            borderColor:'gray.300'
+                        }}
+                        />
 
                         <FormLabel mt="4" fontWeight="thin" >Invoice Date</FormLabel>
-                        <Input type="date" {...register("invoiceDate")} required errorBorderColor="red.300" />
+                        <Input type="date" {...register("invoiceDate")} required errorBorderColor="red.300" 
+                        borderWidth={1.5} 
+                        borderColor="gray.300" 
+                        _hover={{
+                            borderWidth:1.5,
+                            borderColor:'gray.300'
+                        }}
+                        />
 
                         <FormLabel mt="4" fontWeight="bold" textColor="purple.400">Invoice Value</FormLabel>
-                        <Input type="number" {...register("dueAmount")} required errorBorderColor="red.300" />
+                        <Input type="number" {...register("dueAmount")} required errorBorderColor="red.300" 
+                        borderWidth={1.5} 
+                        borderColor="gray.300" 
+                        _hover={{
+                            borderWidth:1.5,
+                            borderColor:'gray.300'
+                        }}
+                        />
 
                         <Button mt="4" type="submit" colorScheme="purple" 
                         onClick={() => (
