@@ -72,7 +72,11 @@ export function NewInvoice({ dueAmount, fromEmail, fromName, invoiceDate, toEmai
                         <FormLabel mt="4" fontWeight="bold" textColor="purple.400">Invoice Value</FormLabel>
                         <Input type="number" {...register("dueAmount")} required errorBorderColor="red.300" />
 
-                        <Button mt="4" type="submit" colorScheme="purple" >submit</Button>
+                        <Button mt="4" type="submit" colorScheme="purple" 
+                        onClick={() => (
+                            window.location.reload()
+                        )}
+                        >submit</Button>
                     </FormControl>
 
                 </Box>
