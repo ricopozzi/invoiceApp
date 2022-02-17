@@ -136,6 +136,9 @@ export default function InvoicePage({invoice, id}: any){
                         border:'none'
                     }}
                     onClick={statusChange}
+                    bg="none"
+                    ml="2"
+                    
                     >Change Status</Button>
 
                     <EditButton 
