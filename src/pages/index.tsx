@@ -26,7 +26,11 @@ interface InvoiceProps {
   attributes: CardProps;
 }
 
-export default function Home({ data }) {
+interface HomeProps {
+  data: any;
+}
+
+export default function Home({ data }: HomeProps) {
   //@ts-ignore
   const [invoices, setInvoices] = useState<InvoiceProps>([]);
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -82,6 +86,7 @@ export default function Home({ data }) {
               textColor='gray.500'
               //@ts-ignore
             >
+              {/** @ts-ignore */}
               There are {invoices.length} total invoices
             </Text>
           </Box>
